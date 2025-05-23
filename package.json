@@ -2,9 +2,10 @@
   "name": "skyoffice",
   "version": "1.0.0",
   "description": "Server for SkyOffice",
-  "main": ".eslintrc.js",
+  "main": "server/index.ts",
   "scripts": {
-    "start": "cd server && ts-node-dev --project tsconfig.server.json --respawn --transpile-only index.ts",
+    "start": "node server/dist/index.js",
+    "build": "tsc --project server/tsconfig.server.json",
     "heroku-postbuild": "yarn && cd types && yarn && cd ../server && tsc --project tsconfig.server.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
